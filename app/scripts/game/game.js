@@ -6,11 +6,11 @@ angular.module('Game', [])
   this.winner = ''
 
   this.update = function(row, col) {
-    var current_symbol = this.swap_player()
     if (this.grid[row][col] == ''){
-      this.grid[row][col] = current_symbol
+      this.grid[row][col] = this.player
       this.check_winning_positions(row,col)
     }
+    this.swap_player()
   }
 
   this.swap_player = function(){
@@ -18,7 +18,6 @@ angular.module('Game', [])
   	  this.player = 'O'
   	else
       this.player = 'X'
-    return this.player
   }
 
   this.check_winning_positions = function(row, col){
