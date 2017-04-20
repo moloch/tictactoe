@@ -5,7 +5,8 @@
         <tbody>
           <tr ng-repeat="row in ctrl.game.grid">
             <td ng-repeat="cell in row track by $index">
-              {{cell}}
+              <button type="button" ng-click="ctrl.game.update($parent.$index, $index)"
+              style="height:200px;width:200px;font-size:800%">{{cell}}</button>
             </td>
           </tr>
         </tbody>
