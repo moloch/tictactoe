@@ -9,8 +9,8 @@ angular.module('Game', [])
     if (this.grid[row][col] == ''){
       this.grid[row][col] = this.player
       this.check_winning_positions(row,col)
+      this.swap_player()
     }
-    this.swap_player()
   }
 
   this.swap_player = function(){
