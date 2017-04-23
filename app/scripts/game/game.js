@@ -14,23 +14,23 @@ angular.module('Game', [])
   }
 
   this.swap_player = function(){
-  	if (this.player == 'X')
-  	  this.player = 'O'
-  	else
+    if (this.player == 'X')
+      this.player = 'O'
+    else
       this.player = 'X'
   }
 
   this.check_winning_positions = function(row, col){
-  	this.check_row_win(row)
+    this.check_row_win(row)
     this.check_column_win(col)
     this.check_main_diagonal_win()
     this.check_secondary_diagonal_win()
   }
 
   this.check_row_win = function(x){
-  	for(y=0;y<=2;y++){
-  	  if (this.grid[x][y] != this.player)
-  	    return
+    for(y=0;y<=2;y++){
+      if (this.grid[x][y] != this.player)
+        return
     }
     this.winner = this.player
   }
